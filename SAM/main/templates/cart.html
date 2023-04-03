@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <style>
+            table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            margin: 0 auto;
+            }
+
+            tr:nth-child(even) {
+            background-color: #f2f2f2;
+            }
+
+            tr:nth-child(odd) {
+            background-color: #fff;
+            }
+
+            thead {
+            background-color: #ffcc00;
+            color: #fff;
+            }
+
+            th {
+            font-weight: bold;
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid #999;
+            }
+
+            td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+            }
+
+            h2 {
+            background-color: #ffcc00;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            margin-top: 0;
+            text-shadow: 1px 1px #333;
+            border: 1px solid #999;
+            border-radius: 5px;
+            box-shadow: 2px 2px #999;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Search Results:</h2>
+        {% for a,b,c in mylist %}
+            <table style="width:100%">
+                <tr>
+                    <th>Service Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+         
+                </tr>
+                <tr>
+                    <td>{{ a }}</td>
+                    <td>{{ b }}</td>
+                    <td>{{ c }}</td>
+    
+                </tr>
+            </table>
+        {% endfor %}
+        <p>Total: {{ sum }}</p>
+        <p>Payment Mode: Cash on Delivery</p>
+        <button><a href="/checkout" style="text-decoration: none;color: inherit;">Checkout</a></button>
+    </body>
+</html>

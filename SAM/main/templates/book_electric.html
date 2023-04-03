@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Electrician Service Landing Page</title>
+	<style>
+		button:disabled{
+			background-color: grey;
+			color: black;
+			border: none;
+			padding: 5px 10px;
+			border-radius: 2px;
+			font-size: 16px;
+			cursor: pointer;
+			margin-top: 20px;
+		}
+		button:disabled:hover{
+			background-color: rgb(94, 93, 93);
+			color: black;
+			cursor: not-allowed
+
+		}
+		body {
+			background-color: #1e1e1e;
+			color: #000000;
+			font-family: Arial, sans-serif;
+			grid-template-columns: repeat(2, 1fr);
+  			grid-gap: 20px;
+		}
+
+		.left-grid {
+			grid-column: 1 / 2;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 2px gray;
+		}
+		  
+		.right-grid {
+			grid-column: 2 / 3;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 2px gray;
+			position: sticky;
+			top: 80px;
+			height: calc(100vh - 120px);
+			overflow-y: auto;
+		}
+		  
+		  
+		
+		h1 {
+			color: #fff;
+			font-size: 40px;
+			margin-top: 60px;
+			margin-bottom: 30px;
+			text-align: center;
+		}
+		p {
+			font-size: 18px;
+			margin: 0 20px 30px 20px;
+			text-align: center;
+		}
+		
+		.services {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			align-items: center;
+			margin-right: 20px;
+			width: 45%;
+		}
+
+		.service {
+			width: 100%;
+			margin-bottom: 20px;
+			padding: 20px;
+			background-color: #292929;
+			border-radius: 5px;
+			text-align: center;
+			position: relative;
+		}
+
+		.service h2 {
+			font-size: 24px;
+			color: rgb(220, 204, 82);
+			margin-top: 0;
+			margin-bottom: 10px;
+			text-align: left;
+		}
+		.service p {
+			font-size: 16px;
+			color: #fff;
+			margin: 0;
+			text-align: left;
+		}
+
+		.service button {
+			background-color: goldenrod;
+			color: black;
+			border: none;
+			padding: 5px 10px;
+			border-radius: 2px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.2s ease-in-out;
+			margin-top: 20px;
+		}
+		  
+		.service button:hover {
+			background-color: black;
+			color: goldenrod;
+		}
+
+		.plus-button, .minus-button {
+			margin-right: 10px;
+			margin-left: 10px;
+		}
+		  
+		.number-display {
+			font-weight: bold;
+			margin: 0 5px;
+		}
+
+		.cart {
+			width: 30%;
+			background-color: #292929;
+			border-radius: 5px;
+			padding: 20px;
+			position: sticky;
+			top: 80px;
+			height: calc(100vh - 120px);
+			overflow-y: auto;
+		}
+		  
+		.cart h2 {
+			font-size: 24px;
+			color: rgb(220, 204, 82);
+			margin-top: 0;
+			margin-bottom: 10px;
+			text-align: left;
+		}
+
+		.checkout {
+			background-color: goldenrod;
+			color: black;
+			border: none;
+			padding: 5px 10px;
+			border-radius: 2px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.2s ease-in-out;
+			margin-top: 20px;
+		}
+
+		.checkout:hover {
+			background-color: black;
+			color: goldenrod;
+		}
+
+		.cart {
+			width: 400px;
+			padding: 20px;
+			background-color: #292929;
+			border-radius: 5px;
+			color: #fff;
+		}
+		  
+		.cart h2 {
+			font-size: 24px;
+			margin-top: 0;
+		}
+		  
+		  .cart-items {
+			margin-bottom: 20px;
+		  }
+		  
+		  .empty-cart {
+			font-size: 16px;
+			margin: 0;
+			text-align: center;
+		  }
+		  
+		  .cart-item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 10px;
+		  }
+		  
+		  .item-name {
+			font-size: 16px;
+			font-weight: bold;
+		  }
+		  
+		  .item-price {
+			font-size: 16px;
+		  }
+		  
+		  .cart-total {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-top: 1px solid #fff;
+			padding-top: 10px;
+		  }
+		  
+		.total-amount {
+			font-weight: bold;
+		  }
+		  
+	</style>
+</head>
+<body>
+	<h1>Welcome to Our Electrician Services</h1>
+	<p style="color:#fff;">Choose from our range of electrical services to find the perfect fit for your home or business.</p>
+<div class="left-grid">
+	<div class="services">
+		<div class="service">
+			<h2 id="0">Switch Replacement</h2>
+			<p>Keep your home up to code and running smoothly with our electrical services.</p>
+			<div style="display:  flex; justify-content: space-between;">
+				<p>Price: Rs.</p>
+				<p id="0p">1220</p>
+			</div>
+			<div class="service-buttons">
+			<button class="add-button" data-id="1">Add</button>	
+			</div>
+		</div> 
+
+		<div class="service">
+			<h2 id="1">Socket Replacement</h2>
+			<p>Keep your home up to code and running smoothly with our electrical services.</p>
+			<div style="display:  flex; justify-content: space-between;">
+				<p>Price: Rs.</p>
+				<p id="1p">120</p>
+			</div>
+			<div class="service-buttons">
+			<button class="add-button" data-id="2">Add</button>	
+			</div>
+		</div>
+
+		<div class="service">
+			<h2 id="2">Fan Repair</h2>
+			<p>Keep your home up to code and running smoothly with our electrical services.</p>
+			<div style="display:  flex; justify-content: space-between;">
+				<p>Price: Rs.</p>
+				<p id="2p">120</p>
+			</div>
+			<div class="service-buttons">
+			<button class="add-button" data-id="3">Add</button>	
+			</div>
+		</div>
+
+        <div class="service">
+			<h2 id="3">Tubelight Installation/Repair</h2>
+			<p>Keep your home up to code and running smoothly with our electrical services.</p>
+			<div style="display:  flex; justify-content: space-between;">
+				<p>Price: Rs.</p>
+				<p id="3p">124</p>
+			</div>
+			<div class="service-buttons">
+			<button class="add-button" data-id="4">Add</button>	
+			</div>
+		</div>
+
+        <div class="service">
+			<h2 id="4">Switchboard Repair</h2>
+			<p>Keep your home up to code and running smoothly with our electrical services.</p>
+			<div style="display:  flex; justify-content: space-between;">
+				<p>Price: Rs.</p>
+				<p id="4p">100</p>
+			</div>
+			<div class="service-buttons">
+			<button class="add-button" data-id="5">Add</button>	
+			</div>
+		</div>
+
+        <div class="service">
+			<h2 id="5">Tubelight Installation/Repair</h2>
+			<p>Keep your home up to code and running smoothly with our electrical services.</p>
+			<div style="display:  flex; justify-content: space-between;">
+				<p>Price: Rs.</p>
+				<p id="5p">110</p>
+			</div>
+			<div class="service-buttons">
+			<button class="add-button" data-id="6">Add</button>	
+			</div>
+		</div>
+
+        <div class="service">
+			<h2 id="6">Switchboard Installation</h2>
+			<p>Keep your home up to code and running smoothly with our electrical services.</p>
+			<div style="display:  flex; justify-content: space-between;">
+				<p>Price: Rs.</p>
+				<p id="6p">120</p>
+			</div>
+			<div class="service-buttons">
+			<button class="add-button" data-id="7">Add</button>	
+			</div>
+		</div>
+
+        <div class="service">
+			<h2 id="7">Amp Switch Box</h2>
+			<p>Keep your home up to code and running smoothly with our electrical services.</p>
+			<div style="display:  flex; justify-content: space-between;">
+				<p>Price: Rs.</p>
+				<p id="7p">120</p>
+			</div>
+			<div class="service-buttons">
+			<button class="add-button" data-id="8">Add</button>	
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+	<button class="checkout" id="gtc" disabled onclick="act()">Go To Cart</button>
+
+	  
+
+	<script>
+		let temp = []
+		let attr = []
+		// Get all the add buttons
+		const addButtons = document.querySelectorAll('.add-button');
+
+		// Loop through each add button and add a click event listener
+		addButtons.forEach(addButton => {
+		addButton.addEventListener('click', () => {
+		// Get the service element that contains the add button
+		const service = addButton.parentNode;
+		
+		// Create the plus button
+		const plusButton = document.createElement('button');
+		plusButton.innerHTML = '+';
+		plusButton.classList.add('plus-button');
+
+		// Create the minus button
+		const minusButton = document.createElement('button');
+		minusButton.innerHTML = '-';
+		minusButton.classList.add('minus-button');
+
+		// Create the number element
+		const numberElement = document.createElement('span');
+		numberElement.innerHTML = '1';
+		numberElement.classList.add('number');
+
+		// Add the plus, minus, and number elements to the service element
+		service.appendChild(plusButton);
+		service.appendChild(numberElement);
+		service.appendChild(minusButton);
+		document.getElementById("gtc").removeAttribute("disabled");
+		
+		// Remove the add button from the service element
+		service.removeChild(addButton);
+
+		// Update the number element when the plus or minus button is clicked
+		let count = 1;
+		temp.push(count)
+		attr.push(addButton.getAttribute("data-id"))
+		plusButton.addEventListener('click', () => {
+			count++;
+			numberElement.innerHTML = count.toString();
+			temp[temp.length-1] = count
+
+		});
+		minusButton.addEventListener('click', () => {
+			if (count > 0) {
+				count--;
+				numberElement.innerHTML = count.toString();
+				temp[temp.length-1] = count
+			}
+		});
+		
+	});
+});
+
+function post(path, params, method='post') {
+
+
+const form = document.createElement('form');
+form.method = method;
+form.action = path;
+
+
+for (const key in params) {
+  if (params.hasOwnProperty(key)) {
+	const hiddenField = document.createElement('input');
+	hiddenField.type = 'hidden';
+	hiddenField.name = key;
+	hiddenField.value = params[key];
+
+	form.appendChild(hiddenField);
+  }
+}
+
+document.body.appendChild(form);
+
+
+form.submit();
+}
+function act(){
+	let s =[]
+	let n =[]
+	let m =[]
+	for (let i=0;i<temp.length; i++){
+		if (temp[i]>0){
+			s.push(document.getElementById((attr[i]-1).toString()).textContent);
+			n.push(temp[i])
+			m.push(document.getElementById((attr[i]-1).toString()+"p").textContent);
+		}
+	}
+	post("/cart", {services: s,quantity: n,prices: m,temp: temp});
+}
+
+	</script>
+
+</body>
+</html>
