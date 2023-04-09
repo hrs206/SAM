@@ -1,5 +1,5 @@
 # SAM
-HTML, CSS, Javascript, Django Project - Service Access and Management
+HTML, CSS, Javascript, Django,MySQL Project - Service Access and Management
 
 
 Users can create accounts in SAM-On Demand to book services from our list of offered services.
