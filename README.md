@@ -8,3 +8,4 @@ User interface shows list of services, current appointments and appointment hist
 
 Business interface has the functionalities of managing services, view current appointments and appointment history.
 
+Personnel interface has the functionalities of searching business user accounts and user accounts by email or name(parital).
